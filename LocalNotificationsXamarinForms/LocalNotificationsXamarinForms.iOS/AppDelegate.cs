@@ -1,5 +1,7 @@
 ﻿using Foundation;
+
 using UIKit;
+
 using UserNotifications;
 
 namespace LocalNotificationsXamarinForms.iOS
@@ -20,6 +22,7 @@ namespace LocalNotificationsXamarinForms.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            UNUserNotificationCenter.Current.Delegate = new IosNotificationReceiver();
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
