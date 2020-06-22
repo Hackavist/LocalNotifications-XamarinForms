@@ -18,5 +18,11 @@ namespace LocalNotificationsXamarinForms
         {
             InitializeComponent();
         }
+
+        void fire_Clicked(System.Object sender, System.EventArgs e)
+        {
+            var date = new DateTime(2020, 6, 22, 17, 12, 0);
+            DependencyService.Get<INotifierService>().Notify(titleentry.Text, bodyentry.Text, 573);
+        }
     }
 }

@@ -115,6 +115,7 @@ namespace LocalNotificationsXamarinForms.iOS
                     Debug.WriteLine("Adding Notification Failed " + err.LocalizedFailureReason);
                 }
             });
+            var requests = UNUserNotificationCenter.Current.GetPendingNotificationRequestsAsync().Result;
         }
 
         /// <summary>
